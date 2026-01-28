@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AdSetQDCAdSDK"
-  s.version      = "7.7.4.30"
+  s.version      = "7.7.4.31"
   s.summary      = "AdSet广告对接聚合类"
   s.description  = <<-DESC
                       AdSetQDCAdSDK 是一个专业的广告聚合SDK，提供高效的广告展示和收益优化功能。
@@ -23,7 +23,10 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = '*.xcframework'
 
   # 系统框架依赖
-  s.frameworks = "Foundation", "UIKit"
+  s.frameworks = "Foundation", "UIKit","AdSupport"
+  s.pod_target_xcconfig = {
+    'OTHER_LDFLAGS' => '-ObjC -lc++'
+  }
   
   # 资源文件
   s.resources = "*.bundle"
